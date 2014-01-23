@@ -23,17 +23,3 @@ group :development do
   gem 'debugger'
   gem 'sextant'
 end
-
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'capybara'
-  gem 'selenium-webdriver', "~> 2.34.0"
-  gem 'database_cleaner'
-  gem 'shoulda-matchers'
-  gem 'factory_girl_rails'
-  gem 'jasmine'
-end
-
-group :test do
-  gem 'webmock', '1.11'
-end
