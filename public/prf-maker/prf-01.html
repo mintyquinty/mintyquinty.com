@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1">
-	<!-- Meta, title, CSS, favicons, etc. -->
-	<meta charset="utf-8" /><title>
-	NEWSystem
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8" /><title>
+  NEWSystem
 </title>
 <meta name="keywords" content="AJAM Al Jazeera Production System" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<!-- Font CSS (Via CDN) -->
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" />
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,300" />
-	<!-- Theme CSS -->
-	<link rel="stylesheet" type="text/css" href="css/theme.css" />
-	<link rel="stylesheet" type="text/css" href="css/custom.css" />
-	<!-- Favicon -->
-	<link href="images/favicon.ico" rel="shortcut icon" />
-	<link href="images/apple-touch-icon.png" rel="apple-touch-icon" />
-	<!-- jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-	<!-- Toastr
-	<link href="vendor/plugins/toastr/toastr.min.css" rel="stylesheet" />
-	 -->
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
+  <!-- Font CSS (Via CDN) -->
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" />
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,300" />
+  <!-- Theme CSS -->
+  <link rel="stylesheet" type="text/css" href="css/theme.css" />
+  <link rel="stylesheet" type="text/css" href="css/custom.css" />
+  <!-- Favicon -->
+  <link href="images/favicon.ico" rel="shortcut icon" />
+  <link href="images/apple-touch-icon.png" rel="apple-touch-icon" />
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <!-- Toastr
+  <link href="vendor/plugins/toastr/toastr.min.css" rel="stylesheet" />
+   -->
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
   <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 <![endif]-->
 
 <!-- link href="vendor/plugins/jquery.qtip/jquery.qtip.min.css" rel="stylesheet" / -->
 <style>
-		.vertical {
-				-webkit-writing-mode: vertical-rl;
-				-ms-writing-mode: tb-rl;
-				writing-mode: vertical-rl;
-				white-space: nowrap;
-		}
-		.b1 {
-				border-left: 1px solid #ccc;
-				text-align: center;
-				vertical-align: middle;
-		}
-		.table-thick {
-				border-top: 2px solid #ccc;
-		}
-		.overdue {
-				background-color: rgba(215, 0, 0, 0.1);
-		}
+    .vertical {
+        -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        white-space: nowrap;
+    }
+    .b1 {
+        border-left: 1px solid #ccc;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .table-thick {
+        border-top: 2px solid #ccc;
+    }
+    .overdue {
+        background-color: rgba(215, 0, 0, 0.1);
+    }
 </style>
 <style type="text/css">
     .GridPager a, .GridPager span
@@ -128,489 +128,650 @@
 }
 </style>
 
-<style type="text/css">
-label {
-	width: 84px;
-}
-input { width: 240px; }
-input.input-checkbox { width: auto; }
-input.input-narrow { width: 66px; }
-input.input-wide {
-	width: 420px;
-}
-.vendors input.input-wide {
-	width: 320px;
-}
-</style>
-
 </head>
   <body>
-		<!-- Start: Theme Preview Pane -->
-		<div id="skin-toolbox" style="visibility: hidden;">
-			<div class="panel">
-				<div class="panel-body pn">
-					<div class="tab-content p20 ptn pb15">
-						<div role="tabpanel" class="tab-pane active" id="toolbox-header">
-							
-						</div>
-						<div role="tabpanel" class="tab-pane" id="toolbox-sidebar">
-						</div>
-						<div role="tabpanel" class="tab-pane" id="toolbox-settings">
-							
-						</div>
-					</div>
-					<div class="form-group mn br-t p15">
-						<a href="#" id="clearLocalStorage" class="btn btn-primary btn-block pb10 pt10">Clear LocalStorage</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End: Theme Preview Pane -->
-		<!-- Start: Main -->
-		<div id="main-lite" style="position: relative; background: #eee;">
-			<!-- Start: Header -->
-			<header class="navbar navbar-fixed-top bg-primary bg-dark">
-				<div class="navbar-branding bg-primary dark">
-					<a class="navbar-brand" href="#">
-						<img src="images/AJAM.png" /></a>
-					<span id="toggle_sidemenu_l" class="glyphicons glyphicons-show_lines"></span>
-					<ul class="nav navbar-nav pull-right hidden">
-						<li>
-							<a href="#" class="sidebar-menu-toggle">
-								<span class="octicon octicon-ruby fs20 mr10 pull-right "></span>
-							</a>
-						</li>
-					</ul>
-				</div>
-				<ul class="nav navbar-nav navbar-left">
-					<li style="margin: 17px 0 0 11px; font-size: 1.4em;"><strong>NEWS</strong>ystem</li>
-					<li class="dropdown hidden">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-							<span class="glyphicons glyphicons-settings fs14"></span>
-						</a>
-						<ul class="dropdown-menu" role="menu">
-							<li>
-								<a href="javascript:void(0);">
-									<span class="fa fa-times-circle-o pr5 text-primary"></span>Reset LocalStorage </a>
-							</li>
-							<li>
-								<a href="javascript:void(0);">
-									<span class="fa fa-slideshare pr5 text-info"></span>Force Global Logout </a>
-							</li>
-							<li class="divider mv5"></li>
-							<li>
-								<a href="javascript:void(0);">
-									<span class="fa fa-tasks pr5 text-danger"></span>Run Cron Job </a>
-							</li>
-							<li>
-								<a href="javascript:void(0);">
-									<span class="fa fa-wrench pr5 text-warning"></span>Maintenance Mode </a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li class="hidden">
-						<a class="sidebar-menu-toggle" href="#">
-							<span class="octicon octicon-ruby fs18 hidden"></span>
-						</a>
-					</li>
-					<li class="hidden">
-						<a class="topbar-menu-toggle" href="#">
-							<span class="glyphicons glyphicons-magic fs16"></span>
-						</a>
-					</li>
-					<li class="hidden-xs">
-						<span id="toggle_sidemenu_l" class="glyphicon glyphicon-log-in fa-flip-horizontal hidden"></span>
-					</li>
-					<li class="hidden-xs">
-						<a class="request-fullscreen toggle-active" href="#">
-							<span class="octicon octicon-screen-full fs18"></span>
-						</a>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle fw600 p15" data-toggle="dropdown">
-							<img src="images/user_0.jpg" alt="avatar" class="mw30 br64 mr15" />
-							<span>Quintan Park</span>
-							<span class="caret caret-tp"></span>
-						</a>
-						<ul class="dropdown-menu dropdown-persist pn w250 bg-white" role="menu">
-							<li class="br-t of-h">
-								<!--<a href="changePassword.aspx?u=1" class="fw600 p12 animated animated-short fadeInDown" <span class="fa fa-power-off pr5"></span>Change Password </a>>-->
-								<a href="#" onclick="CallHref('changePassword.aspx?u=','1');" class="fw600 p12 animated animated-short fadeInDown"><span class="fa fa-power-off pr5"></span>Change Password </a>
-							</li>
-							<li class="br-t of-h">
-								<!--<a href="login.aspx?action=logout" class="fw600 p12 animated animated-short fadeInDown" <span class="fa fa-power-off pr5"></span>Logout </a>-->
-								<a href="#" onclick="CallHref('login.aspx?action=','logout');" class="fw600 p12 animated animated-short fadeInDown"><span class="fa fa-power-off pr5"></span>Logout </a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</header>
-			<!-- End: Header -->
-			<!-- Start: Sidebar -->
-			<aside id="sidebar_left" class="nano nano-primary has-scrollbar sidebar-default affix">
-				<div class="nano-content">
-					<!-- Start: Sidebar Header -->
-					<header class="sidebar-header">
-						<div class="user-menu">
-							<div class="row text-center mbn">
-								<div class="col-xs-4">
-									<a href="dashboard.html" class="text-primary" data-toggle="tooltip" data-placement="top" title="Dashboard">
-										<span class="glyphicons glyphicons-home"></span>
-									</a>
-								</div>
-								<div class="col-xs-4">
-									<a href="pages_messages.html" class="text-info" data-toggle="tooltip" data-placement="top" title="Messages">
-										<span class="glyphicons glyphicons-inbox"></span>
-									</a>
-								</div>
-								<div class="col-xs-4">
-									<a href="pages_profile.html" class="text-alert" data-toggle="tooltip" data-placement="top" title="Tasks">
-										<span class="glyphicons glyphicons-bell"></span>
-									</a>
-								</div>
-								<div class="col-xs-4">
-									<a href="pages_timeline.html" class="text-system" data-toggle="tooltip" data-placement="top" title="Activity">
-										<span class="glyphicons glyphicons-imac"></span>
-									</a>
-								</div>
-								<div class="col-xs-4">
-									<a href="pages_profile.html" class="text-danger" data-toggle="tooltip" data-placement="top" title="Settings">
-										<span class="glyphicons glyphicons-settings"></span>
-									</a>
-								</div>
-								<div class="col-xs-4">
-									<a href="pages_gallery.html" class="text-warning" data-toggle="tooltip" data-placement="top" title="Cron Jobs">
-										<span class="glyphicons glyphicons-restart"></span>
-									</a>
-								</div>
-							</div>
-						</div>
-					</header>
-					<!-- End: Sidebar Header -->
-					<!-- sidebar menu -->
-					<ul class='nav sidebar-menu'>
-						 <li class='sidebar-label pt20'>Menu</li>
-						 <li id='mi7'><a href='/default.aspx'><span class= 'glyphicons glyphicons-home'></span><span class='sidebar-title'>Dashboard</span></a></li>
-						 <li id='mi1'><a href='/contacts.aspx'><span class= 'glyphicons glyphicons-parents'></span><span class='sidebar-title'>Contact List</span></a></li>
-						<li class="sidebar-label pt20 mt20">Actions</li>
-						<li class="sidebar-proj">
-							<a href="pitch.aspx">
-								<span class="fa fa-dot-circle-o text-primary"></span>
-								<span class="sidebar-title">Pitch A Story</span>
-							</a>
-						</li>
-					</ul>
-					<div class="sidebar-toggle-mini">
-						<a href="#">
-							<span class="fa fa-sign-out"></span>
-						</a>
-					</div>
-				</div>
-			</aside>
-			<!-- Start: Content -->
-			<section id="content_wrapper">
-				<!-- Start: Topbar-Dropdown -->
-				<div id="topbar-dropmenu">
-					<div class="topbar-menu row">
-						<div class="col-xs-4 col-sm-2">
-							<a href="#" class="metro-tile bg-success">
-								<span class="metro-icon glyphicons glyphicons-inbox"></span>
-								<p class="metro-title">Messages</p>
-							</a>
-						</div>
-						<div class="col-xs-4 col-sm-2">
-							<a href="#" class="metro-tile bg-info">
-								<span class="metro-icon glyphicons glyphicons-parents"></span>
-								<p class="metro-title">Users</p>
-							</a>
-						</div>
-						<div class="col-xs-4 col-sm-2">
-							<a href="#" class="metro-tile bg-alert">
-								<span class="metro-icon glyphicons glyphicons-headset"></span>
-								<p class="metro-title">Support</p>
-							</a>
-						</div>
-						<div class="col-xs-4 col-sm-2">
-							<a href="#" class="metro-tile bg-primary">
-								<span class="metro-icon glyphicons glyphicons-cogwheels"></span>
-								<p class="metro-title">Settings</p>
-							</a>
-						</div>
-						<div class="col-xs-4 col-sm-2">
-							<a href="#" class="metro-tile bg-warning">
-								<span class="metro-icon glyphicons glyphicons-facetime_video"></span>
-								<p class="metro-title">Training</p>
-							</a>
-						</div>
-						<div class="col-xs-4 col-sm-2">
-							<a href="#" class="metro-tile bg-system">
-								<span class="metro-icon glyphicons glyphicons-file"></span>
-								<p class="metro-title">Documents</p>
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- End: Topbar-Dropdown -->
-				<!-- Start: Topbar -->
-				<header id="topbar" class="affix bg-topbar">					
-					<div class="topbar-left">
-							<ol class="breadcrumb">
-									<li class="crumb-active">
-											Purchase Request Form
-									</li>
-							</ol>
-					</div>
-					<div class="topbar-right">
-					</div>
-				</header>
-				<!-- End: Topbar -->
-				
-				<form name="prf" style="margin-top: 60px;">
-				
-				<!-- Begin: Content -->
-				<section id="content">
-						<div class="container-fluid">     
-								<div class="row">
-										<div class="col-md-12">
-												<div class="panel panel-info bg-gradient" data-animate='["200","fadeIn"]'">
-														<div class="panel-heading">
-																<span class="panel-title">Step 1: Tell us about what you need.</span>
-														</div>
-														<div class="panel-body">
-																<div class="media vendors" style="float: left; margin: 0 24px 0 0;">
-																		<p>What are you looking for?</p>
-																		<textarea name="description" style="width: 420px; height: 70px;"></textarea>
-																</div>
-																<div class="media vendors" style="float: left; margin: 0 24px 0 0;">
-																		<p>Why do you need it?</p>
-																		<textarea name="need" style="width: 420px; height: 70px;"></textarea>
-																</div>
-																<div class="media vendors" style="float: left; margin: 0 0 0 0;">
-																		<p>How soon do you need it?</p>
-																		<input type="text" name="datepicker" id="datepicker" />
-																</div>
-														</div>
-												</div>
-										</div>
-								</div>
-						</div>
-						
-						<div class="container-fluid">     
-								<div class="row">
-										<div class="col-md-6">
-												<div class="panel panel-info bg-gradient" data-animate='["200","fadeIn"]'">
-														<div class="panel-heading">
-																<span class="panel-title">Step 2: Tell us where the product or service can be purchased.</span>
-														</div>
-														<div class="panel-body">
-																<div class="media">
-																		<p>
-																		  <label for="vendor_1_name">Vendor</label> <input type="text" id="vendor_1_name" name="vendor_1_name" placeholder="Name" class="input-wide" />
-																		</p>
-																		<p>
-																		  <label for="vendor_1_address_street">Address</label> <input type="text" id="vendor_1_address_street" name="vendor_1_address_street" placeholder="Street" class="input-wide" /><br />
-																		  <label></label> <input type="text" name="vendor_1_address_city" placeholder="City" class="input-wide" /><br />
-																		  <label></label> <input type="text" name="vendor_1_address_state" placeholder="State" /> <input type="text" name="vendor_1_address_zip" placeholder="Zip" class="input-narrow" />
-																		</p>
-																		<p>
-																		  <label>Fed. ID No.</label> <input type="text" name="vendor_1_fed_no" placeholder="(optional)" class="input-wide" />
-																		</p>
-																</div>
-														</div>
-														<div class="panel-body">
-																<div class="media">
-																		<p>
-																		  <label for="vendor_1_contact_name">Contact</label> <input type="text" id="vendor_1_contact_name" name="vendor_1_contact_name" placeholder="Name" class="input-wide" /><br />
-																		  <label></label> <input type="text" name="vendor_1_contact_phone" placeholder="Phone" class="input-wide" /><br />
-																		  <label></label> <input type="text" name="vendor_1_contact_email" placeholder="Email" class="input-wide" />
-																		</p>
-																</div>
-														</div>
-														<div class="panel-body">
-																<div class="media">
-																		<p>
-																		  <label></label> <input type="checkbox" name="sole_source" class="input-checkbox" onclick="$('#ssj').slideToggle();$('#vendor-selection').slideToggle();" /> This purchase request uses a single vendor source
-																		</p>
-							  										<div id="ssj" style="display: none;" />  
-																		  <label></label> Please provide sufficient justification for using a single source<br />
-																		  <textarea name="ssj" style="width: 420px; height: 70px; margin: 10px 0 0 84px;"></textarea>
-							  										</div>
-																</div>
-														</div>
-												</div>
-										</div>
-										
-										<div class="col-md-6">
-												<div class="panel panel-info bg-gradient" data-animate='["200","fadeIn"]'">
-														<div class="panel-heading">
-																<span class="panel-title">Step 3: What are the payment and shipping details?</span>
-														</div>
-														<div class="panel-body">
-																<div class="media">
-																		<p>
-																		  <label for="cost">Total Cost</label> <input type="text" id="cost" name="cost" placeholder="$0.00" class="input-narrow" />
-																		</p>
-																		<p>
-																		  <label></label> <input type="checkbox" name="contract_modification" class="input-checkbox" onclick="$('#msc').slideToggle('slow');" /> This purchase requires a new contract or a contract modification
-							  										</p>
-							  										<div id="msc" style="display: none;" />
-																			<p>
-																				<label></label> <input type="checkbox" name="existing_contract" class="input-checkbox" /> A contract is already in place
-																			</p>
-																			<p>
-																				<label></label> <input type="text" id="master_contract_amount" name="master_contract_amount" placeholder="$0.00" class="input-narrow" /> Master Contract Amount
-																			</p>
-																		</div>
-																</div>
-														</div>
-														<div class="panel-body">
-																<div class="media">
-																		<p>
-																		  <label for="payment_schedule">Schedule</label>
-																		  <select id="payment_schedule" name="payment_schedule" onchange="checkSchedule();">
-																		  	<option value="one-time">One Time</option>
-																		  	<option value="monthly">Monthly</option>
-																		  	<option value="quarterly">Quarterly</option>
-																		  	<option value="annually">Annually</option>
-																		  	<option value="other">Other</option>
-																		  </select>
-																		  <input type="text" id="other-schedule" name="other-schedule" placeholder="Enter a payment schedule" class="" style="display: none;" />
-																		</p>
-																</div>
-														</div>
-														<div class="panel-body">
-																<div class="media">
-																		<p>
-																		  <label for="agreement_duration">Duration</label>
-																		  <select id="agreement_duration" name="agreement_duration" onchange="checkDuration();">
-																		  	<option value="na">N/A</option>
-																		  	<option value="6mos">6 months</option>
-																		  	<option value="1yr">1 year</option>
-																		  	<option value="2yr">2 years</option>
-																		  	<option value="other">Other</option>
-																		  </select>
-																		  <input type="text" id="other-duration" name="other-duration" placeholder="Enter an agreement duration" class="" style="display: none;" />
-																		</p>
-																</div>
-														</div>
-														<div class="panel-body">
-																<div class="media">
-																		<p>
-																		  <label for="shipping">Shipping</label> <input type="text" id="shipping" name="shipping" placeholder="Enter a location (if applicable)" class="input-wide" />
-																		</p>
-																</div>
-														</div>
-												</div>
-										</div>
-								</div>
-						</div>
-						<div class="container-fluid" id="vendor-selection">     
-								<div class="row">
-										<div class="col-md-12">
-												<div class="panel panel-primary bg-gradient" data-animate='["200","fadeIn"]'">
-														<div class="panel-heading">
-																<span class="panel-title">Step 4: Let us know about the vendors you've looked at.</span>
-														</div>
-														<div class="panel-body">
-																<div class="media vendors" style="float: left; margin: 16px 24px 0 0;">
-																		<p>
-																		  <label for="vendor_1_name">Vendor</label> <input type="text" id="vendor_1_name" name="vendor_1_name" placeholder="Name" class="input-wide" />
-																		</p>
-																		<p>
-																		  <label for="vendor_1_quote">Quote</label> <input type="text" id="vendor_1_quote" name="vendor_1_quote" placeholder="$0.00" class="input-narrow" /><br />
-																		</p>
-																		<p>
-																		  <label for="vendor_1_comments" style="vertical-align: top;">Comments</label>
-																		  <textarea name="vendor_1_comments" style="width: 320px; height: 70px;"></textarea>
-																		</p>
-																</div>
-																<div class="media vendors" style="float: left; margin: 16px 24px 0 0;">
-																		<p>
-																		  <label for="vendor_2_name">Vendor</label> <input type="text" id="vendor_2_name" name="vendor_2_name" placeholder="Name" class="input-wide" />
-																		</p>
-																		<p>
-																		  <label for="vendor_2_quote">Quote</label> <input type="text" id="vendor_2_quote" name="vendor_2_quote" placeholder="$0.00" class="input-narrow" /><br />
-																		</p>
-																		<p>
-																		  <label for="vendor_2_comments" style="vertical-align: top;">Comments</label>
-																		  <textarea name="vendor_2_comments" style="width: 320px; height: 70px;"></textarea>
-																		</p>
-																</div>
-																<div class="media vendors" style="float: left; margin: 16px 0 0 0">
-																		<p>
-																		  <label for="vendor_3_name">Vendor</label> <input type="text" id="vendor_3_name" name="vendor_3_name" placeholder="Name" class="input-wide" />
-																		</p>
-																		<p>
-																		  <label for="vendor_3_quote">Quote</label> <input type="text" id="vendor_3_quote" name="vendor_3_quote" placeholder="$0.00" class="input-narrow" /><br />
-																		</p>
-																		<p>
-																		  <label for="vendor_3_comments" style="vertical-align: top;">Comments</label>
-																		  <textarea name="vendor_3_comments" style="width: 320px; height: 70px;"></textarea>
-																		</p>
-																</div>
-														</div>
-												</div>
-										</div>
-								</div>
-						</div>
-						<div class="container-fluid">     
-								<div class="row">
-										<div class="col-md-12">
-												<div class="panel panel-primary bg-gradient" data-animate='["200","fadeIn"]'">
-														<div class="panel-body">
-																<div class="media" style="float: right; margin: 16px 0 0 0;">
-																		<p>
-																			<button type="button" class="btn btn-primary">Submit</button>
-																		</p>
-																</div>
-														</div>
-												</div>
-										</div>
-								</div>
-						</div>
-				</section>
-				<!-- End: Content -->
-				
-				</form>
-				
-			</section>
-		</div>
-		<!-- End: Main -->
-		<!-- Start: Theme Preview Pane -->
-		<div id="skin-toolbox" style="visibility: hidden;">
-			<div class="panel">
-				<div class="panel-body pn">
-					<div class="tab-content p20 ptn pb15">
-						<div role="tabpanel" class="tab-pane active" id="toolbox-header">
-						</div>
-						<div role="tabpanel" class="tab-pane" id="toolbox-sidebar">
-						</div>
-						<div role="tabpanel" class="tab-pane" id="toolbox-settings">
-						</div>
-					</div>
-					<div class="form-group mn br-t p15">
-						<a href="#" id="clearLocalStorage" class="btn btn-primary btn-block pb10 pt10">Clear LocalStorage</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End: Theme Preview Pane -->
+    <!-- Start: Theme Preview Pane -->
+    <div id="skin-toolbox" style="visibility: hidden;">
+      <div class="panel">
+        <div class="panel-body pn">
+          <div class="tab-content p20 ptn pb15">
+            <div role="tabpanel" class="tab-pane active" id="toolbox-header">
+              
+            </div>
+            <div role="tabpanel" class="tab-pane" id="toolbox-sidebar">
+            </div>
+            <div role="tabpanel" class="tab-pane" id="toolbox-settings">
+              
+            </div>
+          </div>
+          <div class="form-group mn br-t p15">
+            <a href="#" id="clearLocalStorage" class="btn btn-primary btn-block pb10 pt10">Clear LocalStorage</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End: Theme Preview Pane -->
+    <!-- Start: Main -->
+    <div id="main-lite" style="position: relative; background: #eee;">
+      <!-- Start: Header -->
+      <header class="navbar navbar-fixed-top bg-primary bg-dark">
+        <div class="navbar-branding bg-primary dark">
+          <a class="navbar-brand" href="#">
+            <img src="images/AJAM.png" /></a>
+          <span id="toggle_sidemenu_l" class="glyphicons glyphicons-show_lines"></span>
+          <ul class="nav navbar-nav pull-right hidden">
+            <li>
+              <a href="#" class="sidebar-menu-toggle">
+                <span class="octicon octicon-ruby fs20 mr10 pull-right "></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <ul class="nav navbar-nav navbar-left">
+          <li style="margin: 17px 0 0 11px; font-size: 1.4em;"><strong>NEWS</strong>ystem</li>
+          <li class="dropdown hidden">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <span class="glyphicons glyphicons-settings fs14"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="javascript:void(0);">
+                  <span class="fa fa-times-circle-o pr5 text-primary"></span>Reset LocalStorage </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <span class="fa fa-slideshare pr5 text-info"></span>Force Global Logout </a>
+              </li>
+              <li class="divider mv5"></li>
+              <li>
+                <a href="javascript:void(0);">
+                  <span class="fa fa-tasks pr5 text-danger"></span>Run Cron Job </a>
+              </li>
+              <li>
+                <a href="javascript:void(0);">
+                  <span class="fa fa-wrench pr5 text-warning"></span>Maintenance Mode </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="hidden">
+            <a class="sidebar-menu-toggle" href="#">
+              <span class="octicon octicon-ruby fs18 hidden"></span>
+            </a>
+          </li>
+          <li class="hidden">
+            <a class="topbar-menu-toggle" href="#">
+              <span class="glyphicons glyphicons-magic fs16"></span>
+            </a>
+          </li>
+          <li class="hidden-xs">
+            <span id="toggle_sidemenu_l" class="glyphicon glyphicon-log-in fa-flip-horizontal hidden"></span>
+          </li>
+          <li class="hidden-xs">
+            <a class="request-fullscreen toggle-active" href="#">
+              <span class="octicon octicon-screen-full fs18"></span>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle fw600 p15" data-toggle="dropdown">
+              <img src="images/user_0.jpg" alt="avatar" class="mw30 br64 mr15" />
+              <span>Quintan Park</span>
+              <span class="caret caret-tp"></span>
+            </a>
+            <ul class="dropdown-menu dropdown-persist pn w250 bg-white" role="menu">
+              <li class="br-t of-h">
+                <!--<a href="changePassword.aspx?u=1" class="fw600 p12 animated animated-short fadeInDown" <span class="fa fa-power-off pr5"></span>Change Password </a>>-->
+                <a href="#" onclick="CallHref('changePassword.aspx?u=','1');" class="fw600 p12 animated animated-short fadeInDown"><span class="fa fa-power-off pr5"></span>Change Password </a>
+              </li>
+              <li class="br-t of-h">
+                <!--<a href="login.aspx?action=logout" class="fw600 p12 animated animated-short fadeInDown" <span class="fa fa-power-off pr5"></span>Logout </a>-->
+                <a href="#" onclick="CallHref('login.aspx?action=','logout');" class="fw600 p12 animated animated-short fadeInDown"><span class="fa fa-power-off pr5"></span>Logout </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </header>
+      <!-- End: Header -->
+      <!-- Start: Sidebar -->
+      <aside id="sidebar_left" class="nano nano-primary has-scrollbar sidebar-default affix">
+        <div class="nano-content">
+          <!-- Start: Sidebar Header -->
+          <header class="sidebar-header">
+            <div class="user-menu">
+              <div class="row text-center mbn">
+                <div class="col-xs-4">
+                  <a href="dashboard.html" class="text-primary" data-toggle="tooltip" data-placement="top" title="Dashboard">
+                    <span class="glyphicons glyphicons-home"></span>
+                  </a>
+                </div>
+                <div class="col-xs-4">
+                  <a href="pages_messages.html" class="text-info" data-toggle="tooltip" data-placement="top" title="Messages">
+                    <span class="glyphicons glyphicons-inbox"></span>
+                  </a>
+                </div>
+                <div class="col-xs-4">
+                  <a href="pages_profile.html" class="text-alert" data-toggle="tooltip" data-placement="top" title="Tasks">
+                    <span class="glyphicons glyphicons-bell"></span>
+                  </a>
+                </div>
+                <div class="col-xs-4">
+                  <a href="pages_timeline.html" class="text-system" data-toggle="tooltip" data-placement="top" title="Activity">
+                    <span class="glyphicons glyphicons-imac"></span>
+                  </a>
+                </div>
+                <div class="col-xs-4">
+                  <a href="pages_profile.html" class="text-danger" data-toggle="tooltip" data-placement="top" title="Settings">
+                    <span class="glyphicons glyphicons-settings"></span>
+                  </a>
+                </div>
+                <div class="col-xs-4">
+                  <a href="pages_gallery.html" class="text-warning" data-toggle="tooltip" data-placement="top" title="Cron Jobs">
+                    <span class="glyphicons glyphicons-restart"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </header>
+          <!-- End: Sidebar Header -->
+          <!-- sidebar menu -->
+          <ul class='nav sidebar-menu'>
+             <li class='sidebar-label pt20'>Menu</li>
+             <li id='mi7'><a href='/default.aspx'><span class= 'glyphicons glyphicons-home'></span><span class='sidebar-title'>Dashboard</span></a></li>
+             <li id='mi1'><a href='/contacts.aspx'><span class= 'glyphicons glyphicons-parents'></span><span class='sidebar-title'>Contact List</span></a></li>
+            <li class="sidebar-label pt20 mt20">Actions</li>
+            <li class="sidebar-proj">
+              <a href="pitch.aspx">
+                <span class="fa fa-dot-circle-o text-primary"></span>
+                <span class="sidebar-title">Pitch A Story</span>
+              </a>
+            </li>
+          </ul>
+          <div class="sidebar-toggle-mini">
+            <a href="#">
+              <span class="fa fa-sign-out"></span>
+            </a>
+          </div>
+        </div>
+      </aside>
+      <!-- Start: Content -->
+      <section id="content_wrapper">
+        <!-- Start: Topbar-Dropdown -->
+        <div id="topbar-dropmenu">
+          <div class="topbar-menu row">
+            <div class="col-xs-4 col-sm-2">
+              <a href="#" class="metro-tile bg-success">
+                <span class="metro-icon glyphicons glyphicons-inbox"></span>
+                <p class="metro-title">Messages</p>
+              </a>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+              <a href="#" class="metro-tile bg-info">
+                <span class="metro-icon glyphicons glyphicons-parents"></span>
+                <p class="metro-title">Users</p>
+              </a>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+              <a href="#" class="metro-tile bg-alert">
+                <span class="metro-icon glyphicons glyphicons-headset"></span>
+                <p class="metro-title">Support</p>
+              </a>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+              <a href="#" class="metro-tile bg-primary">
+                <span class="metro-icon glyphicons glyphicons-cogwheels"></span>
+                <p class="metro-title">Settings</p>
+              </a>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+              <a href="#" class="metro-tile bg-warning">
+                <span class="metro-icon glyphicons glyphicons-facetime_video"></span>
+                <p class="metro-title">Training</p>
+              </a>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+              <a href="#" class="metro-tile bg-system">
+                <span class="metro-icon glyphicons glyphicons-file"></span>
+                <p class="metro-title">Documents</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- End: Topbar-Dropdown -->
+        <!-- Start: Topbar -->
+        <header id="topbar" class="affix bg-topbar">          
+          <div class="topbar-left">
+              <ol class="breadcrumb">
+                  <li class="crumb-active">
+                      Purchase Request Form
+                  </li>
+              </ol>
+          </div>
+          <div class="topbar-right">
+          </div>
+        </header>
+        <!-- End: Topbar -->
+        
+        <!-- START MODIFICATIONS FOR PRF MOCKUP -->
+
+        <style type="text/css">
+        #content label {
+          width: 16%;
+          margin-bottom: 0;
+          vertical-align: top;
+        }
+        #content .label-right {
+          width: 66%;
+        }
+        #content .label-text-right {
+          padding-left: 8px;
+        }
+        #content input { width: 33%%; color: #333; }
+        #content input.input-checkbox { width: auto; }
+        #content input.input-narrow { 
+          width: 10%; 
+          min-width: 66px; 
+        }
+        #content input.input-medium {
+          width: 42%;
+        }
+        #content input.input-wide {
+          width: 80%;
+        }
+        #content input[type="file"] {
+          display: inline;
+          width: auto;
+        }
+        #content textarea {
+          width: 100%; 
+          height: 70px;
+        }
+        </style>
+        <form name="prf" style="margin-top: 60px;">
+        
+        <!-- Begin: Content -->
+        <section id="content">
+            <div class="container-fluid">     
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-info bg-gradient" data-animate='["200","fadeIn"]'">
+                            <div class="panel-heading">
+                                <span class="panel-title">Step 1: Tell us about what you need.</span>
+                            </div>
+                            <div class="panel-body">
+                                <div class="media vendors">
+                                    <p><label for="description">What are you looking for?</label></p>
+                                    <textarea id="description" name="description"></textarea>
+                                </div>
+                                <div class="media vendors">
+                                    <p><label for="need">Why do you need it?</label></p>
+                                    <textarea id="need" name="need"></textarea>
+                                </div>
+                                <div class="media vendors">
+                                    <p><label for="datepicker">How soon do you need it?</label></p>
+                                    <input type="text" id="datepicker" name="datepicker" id="datepicker" class="input-narrow" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container-fluid">     
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel panel-info bg-gradient" data-animate='["200","fadeIn"]'">
+                            <div class="panel-heading">
+                                <span class="panel-title">Step 2: Tell us where the product or service can be purchased.</span>
+                            </div>
+                            <div id="vendor_1" class="panel-body">
+                                <div class="media">
+                                    <p>
+                                      <label for="vendor-1-name">Vendor 1</label> <input type="text" id="vendor-1-name" name="vendor-1-name" placeholder="Name" class="input-wide" />
+                                    </p>
+                                    <p>
+                                      <label for="vendor-1-address-street">Address</label> <input type="text" id="vendor-1-address-street" name="vendor-1-address-street" placeholder="Street" class="input-wide" /><br />
+                                      <label></label> <input type="text" id="vendor-1-address-city" name="vendor-1-address-city" placeholder="City" class="input-wide" /><br />
+                                      <label></label> <input type="text" id="vendor-1-address-state" name="vendor-1-address-state" placeholder="State" /> <input type="text" id="vendor-1-address-zip" name="vendor-1-address-zip" placeholder="Zip" class="input-narrow" />
+                                    </p>
+                                    <p>
+                                      <label for="vendor-1-quote">Quote</label> <input type="text" id="vendor-1-quote" name="vendor-1-quote" placeholder="$0.00" class="input-narrow" />
+                                      <input type="file" id="vendor-1-quote-upload" name="vendor-1-quote-upload" />
+                                    </p>
+                                    <p>
+                                      <label for="vendor-1-contact-name">Contact</label> <input type="text" id="vendor-1-contact-name" name="vendor-1-contact-name" placeholder="First Last" class="input-wide" /><br />
+                                      <label></label> <input type="text" id="vendor-1-contact-phone" name="vendor-1-contact-phone" placeholder="Phone" class="input-wide" /><br />
+                                      <label></label> <input type="text" id="vendor-1-contact-email" name="vendor-1-contact-email" placeholder="Email" class="input-wide" />
+                                    </p>
+                                    <p>
+                                      <label for="vendor-1-fed-no">Fed. ID No.</label> <input type="text" id="vendor-1-fed-no" name="vendor-1-fed-no" placeholder="(optional)" class="input-wide" />
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="media">
+                                    <p>
+                                      <input type="checkbox" id="sole-source" name="sole-source" class="input-checkbox" onclick="$('#ssj').slideToggle();$('.extra-vendors').slideToggle();" /> 
+                                      <label for="sole-source" class="label-right">This purchase request uses a single vendor source</label>
+                                    </p>
+                                    <div id="ssj" style="display: none;" />  
+                                      <em>Please provide sufficient justification for using a single source:</em><br />
+                                      <textarea name="ssj"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="vendor-2" class="panel-body extra-vendors">
+                                <div class="media">
+                                    <p>
+                                      <label for="vendor-2-name">Vendor 2</label> <input type="text" id="vendor-2-name" name="vendor-2-name" placeholder="Name" class="input-wide" />
+                                    </p>
+                                    <p>
+                                      <label for="vendor-2-address-street">Address</label> <input type="text" id="vendor-2-address-street" name="vendor-2-address-street" placeholder="Street" class="input-wide" /><br />
+                                      <label></label> <input type="text" id="vendor-2-address-city" name="vendor-2-address-city" placeholder="City" class="input-wide" /><br />
+                                      <label></label> <input type="text" id="vendor-2-address-state" name="vendor-2-address-state" placeholder="State" /> <input type="text" id="vendor-2-address-zip" name="vendor-2-address-zip" placeholder="Zip" class="input-narrow" />
+                                    </p>
+                                    <p>
+                                      <label for="vendor-2-quote">Quote</label> <input type="text" id="vendor-2-quote" name="vendor-2-quote" placeholder="$0.00" class="input-narrow" />
+                                      <input type="file" id="vendor-2-quote-upload" name="vendor-2-quote-upload" />
+                                    </p>
+                                    <p>
+                                      <label for="vendor-2-contact-name">Contact</label> <input type="text" id="vendor-2-contact-name" name="vendor-2-contact-name" placeholder="First Last" class="input-wide" /><br />
+                                      <label></label> <input type="text" id="vendor-2-contact-phone" name="vendor-2-contact-phone" placeholder="Phone" class="input-wide" /><br />
+                                      <label></label> <input type="text" id="vendor-2-contact-email" name="vendor-2-contact-email" placeholder="Email" class="input-wide" />
+                                    </p>
+                                    <p>
+                                      <label for="vendor-2-fed-no">Fed. ID No.</label> <input type="text" id="vendor-2-fed-no" name="vendor-2-fed-no" placeholder="(optional)" class="input-wide" />
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="vendor-3" class="panel-body extra-vendors"">
+                                <div class="media">
+                                    <p>
+                                      <label for="vendor-3-name">Vendor 3</label> <input type="text" id="vendor-3-name" name="vendor-3-name" placeholder="Name" class="input-wide" />
+                                    </p>
+                                    <p>
+                                      <label for="vendor-3-address-street">Address</label> <input type="text" id="vendor-3-address-street" name="vendor-3-address-street" placeholder="Street" class="input-wide" /><br />
+                                      <label></label> <input type="text" id="vendor-3-address-city" name="vendor-3-address-city" placeholder="City" class="input-wide" /><br />
+                                      <label></label> <input type="text" id="vendor-3-address-state" name="vendor-3-address-state" placeholder="State" /> <input type="text" id="vendor-3-address-zip" name="vendor-3-address-zip" placeholder="Zip" class="input-narrow" />
+                                    </p>
+                                    <p>
+                                      <label for="vendor-3-quote">Quote</label> <input type="text" id="vendor-3-quote" name="vendor-3-quote" placeholder="$0.00" class="input-narrow" />
+                                      <input type="file" id="vendor-3-quote-upload" name="vendor-3-quote-upload" />
+                                    </p>
+                                    <p>
+                                      <label for="vendor-3-contact-name">Contact</label> <input type="text" id="vendor-3-contact-name" name="vendor-3-contact-name" placeholder="First Last" class="input-wide" /><br />
+                                      <label></label> <input type="text" id="vendor-3-contact-phone" name="vendor-3-contact-phone" placeholder="Phone" class="input-wide" /><br />
+                                      <label></label> <input type="text" id="vendor-3-contact-email" name="vendor-3-contact-email" placeholder="Email" class="input-wide" />
+                                    </p>
+                                    <p>
+                                      <label for="vendor-3-fed-no">Fed. ID No.</label> <input type="text" id="vendor-3-fed-no" name="vendor-3-fed-no" placeholder="(optional)" class="input-wide" />
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="panel panel-info bg-gradient" data-animate='["200","fadeIn"]'">
+                            <div class="panel-heading">
+                                <span class="panel-title">Step 3: What are the payment and shipping details?</span>
+                            </div>
+                            <div class="panel-body">
+                                <div class="media">
+                                    <p>
+                                      <label for="cost">Total Cost</label> <input type="text" id="cost" name="cost" placeholder="$0.00" class="input-narrow" />
+                                    </p>
+                                    <p>
+                                      <label></label> <input type="checkbox" id="contract-modification" name="contract-modification" class="input-checkbox" onclick="$('#msc').slideToggle('slow');" /> 
+                                      <label for="contract-modification" class="label-right">This purchase requires a new contract or a contract modification</label>
+                                    </p>
+                                    <div id="msc" style="display: none;" />
+                                      <p>
+                                        <label></label> <input type="checkbox" id="existing-contract" name="existing-contract" class="input-checkbox" /> 
+                                        <label for="existing-contract" class="label-right">A contract is already in place
+                                      </p>
+                                      <p>
+                                        <label></label> <input type="text" id="master-contract-amount" name="master-contract-amount" placeholder="$0.00" class="input-narrow" /> 
+                                        <label for="master-contract-amount" class="label-right">Master Contract Amount
+                                      </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="media">
+                                    <p>
+                                      <label for="cost-center">Cost Center</label>
+                                      <select id="cost-center" name="cost-center" onchange="checkCostCenter();">
+                                        <option value="0">Select a Cost Center</option>
+                                      </select>
+                                    </p>
+                                    <p class="cost-center-info" style="display: none;">
+                                      <label for="cost-center-id" class="label-text-right">ID</label> <input type="text" id="cost-center-id" name="cost-center-id" class="input-medium" />
+                                    </p>
+                                    <p class="cost-center-info" style="display: none;">
+                                      <label for="cost-center-dept" class="label-text-right">Dept.</label> <input type="text" id="cost-center-dept" name="cost-center-dept" class="input-medium" />
+                                    </p>
+                                    <p class="cost-center-info" style="display: none;">
+                                      <label for="cost-center-owner" class="label-text-right">Owner</label> <input type="text" id="cost-center-owner" name="cost-center-owner" class="input-medium" />
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="media">
+                                    <p>
+                                      <label for="code">Code</label>
+                                      <input type="text" id="code" name="code" class="input-wide" placeholder="Project, Story or Analytical Code (if applicable)" />
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="media">
+                                    <p>
+                                      <label for="payment-schedule">Schedule</label>
+                                      <select id="payment-schedule" name="payment-schedule" onchange="checkSchedule();">
+                                        <option value="one-time">One Time</option>
+                                        <option value="monthly">Monthly</option>
+                                        <option value="quarterly">Quarterly</option>
+                                        <option value="annually">Annually</option>
+                                        <option value="other">Other</option>
+                                      </select>
+                                      <input type="text" id="other-schedule" name="other-schedule" placeholder="Enter a payment schedule" class="input-medium" style="display: none;" />
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="media">
+                                    <p>
+                                      <label for="agreement-duration">Duration</label>
+                                      <select id="agreement-duration" name="agreement-duration" onchange="checkDuration();">
+                                        <option value="na">N/A</option>
+                                        <option value="6mos">6 months</option>
+                                        <option value="1yr">1 year</option>
+                                        <option value="2yr">2 years</option>
+                                        <option value="other">Other</option>
+                                      </select>
+                                      <input type="text" id="other-duration" name="other-duration" placeholder="Enter an agreement duration" class="input-medium" style="display: none;" />
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="media">
+                                    <p>
+                                      <label for="shipping-contact">Ship To</label> <input type="text" id="shipping-contact" name="shipping-contact" placeholder="Enter a recipient (if applicable)" class="input-wide" />
+                                    </p>
+                                    <p>
+                                      <label for="shipping-address-street">Address</label> <input type="text" id="shipping-address-street" name="shipping-address-street" placeholder="Street" class="input-wide" /><br />
+                                      <label></label> <input type="text" id="shipping-address-city" name="shipping-address-city" placeholder="City" class="input-wide" /><br />
+                                      <label></label> <input type="text" id="shipping-address-state" name="shipping-address-state" placeholder="State" /> <input type="text" id="shipping-address-zip" name="shipping-address-zip" placeholder="Zip" class="input-narrow" />
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">     
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-primary bg-gradient" data-animate='["200","fadeIn"]'">
+                            <div class="panel-body">
+                                <div class="media" style="float: right; margin: 16px 0 0 0;">
+                                    <p>
+                                      <button type="button" class="btn btn-primary">Submit</button>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End: Content -->
+        
+        </form>
+        
+      </section>
+    </div>
+    <!-- End: Main -->
+    <!-- Start: Theme Preview Pane -->
+    <div id="skin-toolbox" style="visibility: hidden;">
+      <div class="panel">
+        <div class="panel-body pn">
+          <div class="tab-content p20 ptn pb15">
+            <div role="tabpanel" class="tab-pane active" id="toolbox-header">
+            </div>
+            <div role="tabpanel" class="tab-pane" id="toolbox-sidebar">
+            </div>
+            <div role="tabpanel" class="tab-pane" id="toolbox-settings">
+            </div>
+          </div>
+          <div class="form-group mn br-t p15">
+            <a href="#" id="clearLocalStorage" class="btn btn-primary btn-block pb10 pt10">Clear LocalStorage</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End: Theme Preview Pane -->
+    
 <script>
   $(function() {
     $( "#datepicker" ).datepicker();
   });
   
   function checkSchedule() {
-  	if ($('#payment_schedule').val() == 'other') $('#other-schedule').show();
-  	else $('#other-schedule').hide();
+    if ($('#payment-schedule').val() == 'other') $('#other-schedule').show();
+    else $('#other-schedule').hide();
   }
   function checkDuration() {
-  	if ($('#agreement_duration').val() == 'other') $('#other-duration').show();
-  	else $('#other-duration').hide();
+    if ($('#agreement-duration').val() == 'other') $('#other-duration').show();
+    else $('#other-duration').hide();
   }
+  var deptdrop = [{"name": "America Tonight","id": "253","department": "Programs","owner": "Shannon High-Bassalik"},
+{"name": "Consider This","id": "254","department": "Programs","owner": "Shannon High-Bassalik"},
+{"name": "Faultlines","id": "252","department": "Programs","owner": "Shannon High-Bassalik"},
+{"name": "Open Question","id": "256","department": "Programs","owner": "Shannon High-Bassalik"},
+{"name": "Techknow","id": "255","department": "Programs","owner": "Shannon High-Bassalik"},
+{"name": "The Stream","id": "251","department": "Programs","owner": "Shannon High-Bassalik"},
+{"name": "Ad Sales","id": "070","department": "Ad Sales","owner": "Ken Ripley"},
+{"name": "Ad Sales Marketing","id": "023","department": "Marketing","owner": "Cathy Tankosic"},
+{"name": "Affiliate Marketing","id": "024","department": "Marketing","owner": "Cathy Tankosic"},
+{"name": "Atlanta Bureau","id": "224","department": "News","owner": "Marcy McGinness"},
+{"name": "Beijing Bureau","id": "225","department": "News","owner": "Marcy McGinness"},
+{"name": "Boston Bureau","id": "223","department": "News","owner": "Marcy McGinness"},
+{"name": "Breakdown","id": "262","department": "Programs","owner": "Shannon High-Bassalik"},
+{"name": "Business Affairs","id": "094","department": "Business Affairs","owner": "David Harleston"},
+{"name": "Chicago Bureau","id": "212","department": "News","owner": "Marcy McGinness"},
+{"name": "Consumer Marketing","id": "020","department": "Marketing","owner": "Cathy Tankosic"},
+{"name": "Content","id": "301","department": "Digital","owner": "Mark Coatney"},
+{"name": "Corporate & Exec","id": "091","department": "Corporate & Exec","owner": "Al Anstey"},
+{"name": "Creative","id": "500","department": "Creative","owner": "Kate O\'Brian"},
+{"name": "Culture show","id": "258","department": "Programs","owner": "Shannon High-Bassalik"},
+{"name": "Dallas Bureau","id": "216","department": "News","owner": "Marcy McGinness"},
+{"name": "Denver Bureau","id": "213","department": "News","owner": "Marcy McGinness"},
+{"name": "Detroit Bureau","id": "210","department": "News","owner": "Marcy McGinness"},
+{"name": "Distribution","id": "060","department": "Distribution","owner": "Mary Murano"},
+{"name": "Documentaries/Commissions/Major Series","id": "260","department": "Programs","owner": "Shannon High-Bassalik"},
+{"name": "Facilities","id": "092","department": "Facilities","owner": "David Harleston"},
+{"name": "Finance & Accounting","id": "090","department": "Finance & Accounting","owner": "Anand Gupta"},
+{"name": "Government Relations","id": "081","department": "Government Relations","owner": "Al Anstey"},
+{"name": "HR","id": "093","department": "HR","owner": "Diana Lee"},
+{"name": "Inside Story Americas","id": "203","department": "News","owner": "David Doss"},
+{"name": "IT/Network - DC","id": "452","department": "IT/Network","owner": "Marc Gatto"},
+{"name": "IT/Network - LA","id": "454","department": "IT/Network","owner": "Marc Gatto"},
+{"name": "IT/Network - NY","id": "451","department": "IT/Network","owner": "Marc Gatto"},
+{"name": "IT/Network - SF","id": "453","department": "IT/Network","owner": "Marc Gatto"},
+{"name": "Jersualem Bureau","id": "218","department": "News","owner": "Marcy McGinness"},
+{"name": "London Bureau","id": "226","department": "News","owner": "Marcy McGinness"},
+{"name": "Los Angeles Bureau","id": "220","department": "News","owner": "Marcy McGinness"},
+{"name": "Management (Broadcast Ops)","id": "400","department": "Broadcast Operations","owner": "Marc Gatto"},
+{"name": "Management (Digital)","id": "300","department": "Digital","owner": "Mark Coatney"},
+{"name": "Management (IT/Network)","id": "450","department": "IT/Network","owner": "Marc Gatto"},
+{"name": "Management (Marketing)","id": "026","department": "Marketing","owner": "Cathy Tankosic"},
+{"name": "Management (News)","id": "200","department": "News","owner": "Kate O\'Brian"},
+{"name": "Management (Production & Programming)","id": "280","department": "Production & Programming","owner": "Terry Baker"},
+{"name": "Management (Programs)","id": "250","department": "Programs","owner": "Kate O\'Brian"},
+{"name": "Miami Bureau","id": "217","department": "News","owner": "Marcy McGinness"},
+{"name": "Morning News Block","id": "204","department": "News","owner": "David Doss"},
+{"name": "Multimedia","id": "304","department": "Digital","owner": "Mark Coatney"},
+{"name": "Nashville Bureau","id": "214","department": "News","owner": "Marcy McGinness"},
+{"name": "New Orleans Bureau","id": "215","department": "News","owner": "Marcy McGinness"},
+{"name": "New York Bureau","id": "222","department": "News","owner": "Marcy McGinness"},
+{"name": "News","id": "305","department": "Digital","owner": "Mark Coatney"},
+{"name": "News Gathering","id": "201","department": "News","owner": "Marcy McGinness"},
+{"name": "News Programming","id": "202","department": "News","owner": "David Doss"},
+{"name": "On-Air Promos","id": "022","department": "Marketing","owner": "Cathy Tankosic"},
+{"name": "Operations - DC K Street","id": "403","department": "Broadcast Operations","owner": "Marc Gatto"},
+{"name": "Operations - DC Newseum","id": "404","department": "Broadcast Operations","owner": "Marc Gatto"},
+{"name": "Operations - LA","id": "412","department": "Broadcast Operations","owner": "Marc Gatto"},
+{"name": "Operations - NY 33rd St","id": "402","department": "Broadcast Operations","owner": "Marc Gatto"},
+{"name": "Operations - NY 34th St","id": "401","department": "Broadcast Operations","owner": "Marc Gatto"},
+{"name": "Operations - Other","id": "410","department": "Broadcast Operations","owner": "Marc Gatto"},
+{"name": "Operations - SF","id": "411","department": "Broadcast Operations","owner": "Marc Gatto"},
+{"name": "Product Development","id": "350","department": "Product Development","owner": "Angela Morgenstern"},
+{"name": "Public Relations/Communications","id": "080","department": "Public Relations/Communications","owner": "Dawn Bridges"},
+{"name": "Real Money","id": "259","department": "Programs","owner": "Shannon High-Bassalik"},
+{"name": "Research","id": "021","department": "Research","owner": "John Sollecito"},
+{"name": "Reversioning & Scheduling","id": "281","department": "Production & Programming","owner": "Terry Baker"},
+{"name": "Rio de Janeiro Bureau","id": "227","department": "News","owner": "Marcy McGinness"},
+{"name": "San Francisco Bureau","id": "219","department": "News","owner": "Marcy McGinness"},
+{"name": "Seattle Bureau","id": "211","department": "News","owner": "Marcy McGinness"},
+{"name": "Sports News","id": "207","department": "News","owner": "David Doss"},
+{"name": "Sports Show","id": "257","department": "Programs","owner": "Shannon High-Bassalik"},
+{"name": "Talk to Al Jazeera","id": "206","department": "News","owner": "David Doss"},
+{"name": "Travel & Purchasing","id": "095","department": "Travel & Purchasing","owner": "Anand Gupta"},
+{"name": "Washington, DC Bureau","id": "221","department": "News","owner": "Marcy McGinness"},
+{"name": "Weather","id": "208","department": "News","owner": "David Doss"}];
+
+var options = $("#cost-center");
+$.each(deptdrop, function() {
+    options.append($("<option />").val(this.id).text(this.name));
+});
+
+function checkCostCenter() {
+  var data = getDataByKey(deptdrop, "id", $('#cost-center').val());
+  if ($('#cost-center').val() == 0) {
+    $('.cost-center-info').fadeOut('slow');
+  } else {
+    $('#cost-center-id').val(data.id);
+    $('#cost-center-dept').val(data.department);
+    $('#cost-center-owner').val(data.owner);
+    
+    if (! $('.cost-center-info').is(':visible')) $('.cost-center-info').slideDown('slow');
+  }
+}
+
+function getDataByKey(arr, key, val) {
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i][key] == val) {
+      return arr[i];
+    }
+  }
+  return null;
+}
+
 </script>
+        
+        <!-- END MODIFICATIONS FOR PRF MOCKUP -->
   
   </body>
 </html>
