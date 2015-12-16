@@ -2,6 +2,7 @@ var gameData,
 	mlburl = 'http://gdx.mlb.com/components/game/mlb/year_2015/month_09/day_12/master_scoreboard.json',
 	imagesOK = 0,
 	images = [],
+	newAddress,
 	w = window.innerWidth,
 	h = window.innerHeight,
 	activeGameCanvas,
@@ -9,7 +10,7 @@ var gameData,
 
 function createGameList()
 {
-	displayToday();
+	parseURL(window.location.href);
 	setURL();
 	loadJSON(function(data) { 
 			gameData = data['data']['games']['game'];
@@ -117,7 +118,7 @@ function highlightActiveGame(myCanvas){
 	
 	context.font = '12px Helvetica';
 	context.fillText(venueText, 78, 124);
-	context.fillText(datetimeText, 78	, 144);
+	context.fillText(datetimeText, 78, 144);
 	
 	context.lineWidth = 2;
 	context.strokeStyle = '#fff';
@@ -133,41 +134,40 @@ function fourohfour(){
 
 function setURL()
 {
+	var year = newDate.getFullYear();
 	var month = ('0' + newDate.getMonth()).slice(-2);
 	var day = ('0' + newDate.getDate()).slice(-2);
-	mlburl = 'http://gdx.mlb.com/components/game/mlb/year_' + newDate.getFullYear()+ '/month_' + month + '/day_' + day + '/master_scoreboard.json';
+	mlburl = 'http://gdx.mlb.com/components/game/mlb/year_' + year + '/month_' + month + '/day_' + day + '/master_scoreboard.json';
+	setLinks(year, month, day);
 }
 
 function parseURL(url) {
-    var address, query, param, dateValue;
-	address = url.split('?'); 
+    var address, query, param, dateValue, today;
+	address = url.split('?');
+	newAddress = address[0];
     query = address[1] ? address[1].split('&') : [];
     for(var i = 0; i < query.length; i++ ) {
         param = query[i].split('=');
         if (param[0] == 'date') dateValue = param[1];
     }
-    return {
-		location: address[0],
-        dateValue: dateValue,
-    };
-}
-
-function displayToday() {
-	var whatDayIsIt = parseURL(window.location.href);
-	var today = whatDayIsIt.dateValue || '05/20/2015';
+	today = dateValue || '05/20/2015';
 	newDate = new Date(today);
 	document.getElementById('today').innerHTML = newDate.toDateString();
-	
+}
+
+function setLinks(year, month, day)
+{
 	/*
 	TODO: Fix this up
+	*/
 	var prev = document.getElementById('prev-day');
 	var next = document.getElementById('next-day');
 	
-	var prevLoc = whatDayIsIt['location'] + '?date=' + fixedMonthString + '/' + fixedDateString+ '/' + newDate.getFullYear();
+	var prevLoc = newAddress + '?date=' + month + '/' + day+ '/' + year;
 
 	
 	console.log('prevLoc', prevLoc);
-	
+	/*
 	prev.addEventListener('click', function() {
 		window.location = prevLoc;
 	}, false);
