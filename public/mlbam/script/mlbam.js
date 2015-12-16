@@ -6,7 +6,9 @@ var gameData,
 	w = window.innerWidth,
 	h = window.innerHeight,
 	activeGameCanvas,
-	newDate;
+	newDate,
+	prevDate,
+	nextDate;
 
 function createGameList()
 {
@@ -103,27 +105,21 @@ function resetGame(gameCanvas){
 function highlightActiveGame(myCanvas){
 	var context = myCanvas.getContext('2d');
 	context.globalAlpha = 1.0;
-	
 	/* Game, Thumb, Time for active game */
 	var gameText = gameData[myCanvas.id].away_name_abbrev + ' v ' + gameData[myCanvas.id].home_name_abbrev;
 	var venueText = gameData[myCanvas.id].venue;
 	var datetimeText = gameData[myCanvas.id].time_date + ' ' + gameData[myCanvas.id].time_zone;
-	
 	context.fillStyle = 'white';
 	context.font = 'bold 15px Helvetica, Arial, sans-serif';
   	context.textAlign = 'center';
 	context.fillText(gameText, 78, 16);
-	
 	context.drawImage(images[myCanvas.id], 6, 20, 155, 88);
-	
 	context.font = '12px Helvetica';
 	context.fillText(venueText, 78, 124);
 	context.fillText(datetimeText, 78, 144);
-	
 	context.lineWidth = 2;
 	context.strokeStyle = '#fff';
 	context.strokeRect(3, 20, 155, 88);
-	
 	activeGameCanvas = myCanvas;
 }
 
@@ -134,42 +130,52 @@ function fourohfour(){
 
 function setURL()
 {
-	var year = newDate.getFullYear();
-	var month = ('0' + newDate.getMonth()).slice(-2);
-	var day = ('0' + newDate.getDate()).slice(-2);
-	mlburl = 'http://gdx.mlb.com/components/game/mlb/year_' + year + '/month_' + month + '/day_' + day + '/master_scoreboard.json';
-	setLinks(year, month, day);
+	var dateArray = getDateInfo(newDate);	
+	mlburl = 'http://gdx.mlb.com/components/game/mlb/year_' + dateArray['year'] + '/month_' + dateArray['month'] + '/day_' + dateArray['day'] + '/master_scoreboard.json';
+	setLinks();
 }
 
 function parseURL(url) {
     var address, query, param, dateValue, today;
 	address = url.split('?');
-	newAddress = address[0];
+	newAddress = address[0]; // Global
     query = address[1] ? address[1].split('&') : [];
     for(var i = 0; i < query.length; i++ ) {
         param = query[i].split('=');
         if (param[0] == 'date') dateValue = param[1];
     }
 	today = dateValue || '05/20/2015';
-	newDate = new Date(today);
+	newDate = new Date(today); // Global
 	document.getElementById('today').innerHTML = newDate.toDateString();
 }
 
-function setLinks(year, month, day)
+function setLinks()
 {
-	/*
-	TODO: Fix this up
-	*/
 	var prev = document.getElementById('prev-day');
 	var next = document.getElementById('next-day');
-	
-	var prevLoc = newAddress + '?date=' + month + '/' + day+ '/' + year;
-
-	
-	console.log('prevLoc', prevLoc);
-	/*
+	prevDate = new Date(newDate - 1000 * 60 * 60 * 24 * 1); // Global
+	nextDate = new Date(newDate.getTime() + 1000 * 60 * 60 * 24 * 1); // Global
+	var prevDateArray = getDateInfo(prevDate);
+	var nextDateArray = getDateInfo(nextDate);
+	var prevLoc = newAddress + '?date=' + prevDateArray['month'] + '/' + prevDateArray['day'] + '/' + prevDateArray['year'];
+	var nextLoc = newAddress + '?date=' + nextDateArray['month'] + '/' + nextDateArray['day'] + '/' + nextDateArray['year']
 	prev.addEventListener('click', function() {
 		window.location = prevLoc;
 	}, false);
-	*/
+	next.addEventListener('click', function() {
+		window.location = nextLoc;
+	}, false);
+}
+
+function getDateInfo(someDate)
+{
+	console.log('someDate', someDate);
+	var year = someDate.getFullYear();
+	var month = ('0' + (someDate.getMonth() + 1)).slice(-2);
+	var day = ('0' + someDate.getDate()).slice(-2);
+	return {
+		year: year,
+		month: month,
+		day: day
+	}
 }
