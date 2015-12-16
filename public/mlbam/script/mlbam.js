@@ -10,10 +10,10 @@ var gameData,
 function createGameList()
 {
 	displayToday();
+	setURL();
 	loadJSON(function(data) { 
 			gameData = data['data']['games']['game'];
 			extractThumbnails(createThumbnail);
-			document.getElementById('today').innerHTML = newDate.toDateString();
 		},
 		function(xhr) { console.error(xhr); }
 	);
@@ -98,6 +98,7 @@ function resetGame(gameCanvas){
 function highlightActiveGame(myCanvas){
 	var context = myCanvas.getContext('2d');
 	context.globalAlpha = 1.0;
+	
 	/* Game, Thumb, Time for active game */
 	var gameText = gameData[myCanvas.id].away_name_abbrev + ' v ' + gameData[myCanvas.id].home_name_abbrev;
 	var venueText = gameData[myCanvas.id].venue;
@@ -126,45 +127,33 @@ function fourohfour(){
 	this.src = "images/404-124x70.jpg";
 }
 
-/* Wait... what day is it? */
+function setURL()
+{
+	var month = ('0' + newDate.getMonth()).slice(-2);
+	var day = ('0' + newDate.getDate()).slice(-2);
+	mlburl = 'http://gdx.mlb.com/components/game/mlb/year_' + newDate.getFullYear()+ '/month_' + month + '/day_' + day + '/master_scoreboard.json';
+}
+
 function parseURL(url) {
-    var loc, searchObject = {},
-        queries, split, i;
-    // Convert query string to object
-	loc = url.split('?'); 
-    queries = url.replace(/^\?/, '').split('&');
-    for( i = 0; i < queries.length; i++ ) {
-        split = queries[i].split('=');
-        //searchObject[split[0]] = split[1];
-        searchObject['today'] = split[1];
+    var address, query, param, dateValue;
+	address = url.split('?'); 
+    query = address[1] ? address[1].split('&') : [];
+    for(var i = 0; i < query.length; i++ ) {
+        param = query[i].split('=');
+        if (param[0] == 'date') dateValue = param[1];
     }
     return {
-		location: loc[0],
-        searchObject: searchObject,
+		location: address[0],
+        dateValue: dateValue,
     };
 }
 
 function displayToday() {
 	var whatDayIsIt = parseURL(window.location.href);
-	var today = whatDayIsIt.searchObject['today'];
-	var fixedDateString = '19';
-	var fixedMonthString = '05';
-
-	if (typeof today === 'undefined') {
-		// May 20, 2015 by default
-		newDate = new Date(2015, 4, 20);
-	} else {
-		var parts = today.split('/');
-		newDate = new Date(parts[2],parts[0]-1,parts[1]);
-		
-		fixedDateString = (parts[1]).toString();
-		if (parts[1] < 10) fixedDateString = '0' + fixedDateString;
-		
-		fixedMonthString = (parts[0]-1).toString();
-		if (parts[0]-1 < 10) fixedMonthString = '0' + fixedMonthString;
-		
-		mlburl = 'http://gdx.mlb.com/components/game/mlb/year_' + parts[2]+ '/month_' + fixedMonthString + '/day_' + fixedDateString + '/master_scoreboard.json';
-	}
+	var today = whatDayIsIt.dateValue || '05/20/2015';
+	newDate = new Date(today);
+	document.getElementById('today').innerHTML = newDate.toDateString();
+	
 	/*
 	TODO: Fix this up
 	var prev = document.getElementById('prev-day');
