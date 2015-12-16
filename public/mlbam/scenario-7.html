@@ -1,0 +1,31 @@
+<html>
+<head>
+	<link href="css/style.css" type="text/css" rel="stylesheet" />
+	
+	<script type="text/javascript" src="script/json2.js"></script>
+	<script type="text/javascript" src="script/mlbam.js"></script>
+	<script type="text/javascript">
+
+	/* Let 'er rip. */
+	window.onload = function() {
+		displayToday();
+		
+		loadJSON(mlburl,
+			function(data) { 
+				gameData = data['data']['games']['game'];
+				extractThumbnails(createThumbnail);
+				document.getElementById('today').innerHTML = newDate.toDateString();
+			},
+			function(xhr) { console.error(xhr); }
+		);
+	};
+	</script>
+
+</head>
+<body>
+	<div id="mlb-container">
+	  <div id="mlb-content"></div>
+	  <a href="#" id="prev-day">&lt; Previous Game Day</a> | <span id="today"></span> | <a href="#" id="next-day">Next Game Day &gt;</a>
+	</div>
+</body>
+</html>

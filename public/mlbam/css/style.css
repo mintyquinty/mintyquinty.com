@@ -1,0 +1,36 @@
+body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	background: #000 url('/mlbam/images/1.jpg') top left no-repeat;
+	background-size: cover;
+	text-align: center;
+	color: #fff;
+}
+#mlb-container{
+   position: absolute;
+   top: 50%;
+   margin-top: -35px;/* half of #content height*/
+   left: 0;
+   width: 100%;
+}
+#mlb-content {
+   width: 100%;
+   /*margin-left: auto;
+   margin-right: auto;*/
+   height: 200px;
+	white-space: nowrap;
+	overflow: scroll;
+}
+#mlb-list {
+	white-space: nowrap;
+	overflow: hidden;
+}
+canvas {
+	color: #fff;
+}
+a {
+	color: #fff;
+	text-decoration: none;
+}
