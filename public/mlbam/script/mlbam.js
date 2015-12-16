@@ -5,16 +5,14 @@ var gameData,
 	w = window.innerWidth,
 	h = window.innerHeight,
 	activeGameCanvas,
-	activeGameCanvasId = 0,
 	newDate;
 
 function createGameList()
 {
+	displayToday();
 	loadJSON(function(data) { 
 			gameData = data['data']['games']['game'];
 			extractThumbnails(createThumbnail);
-			
-			displayToday();
 			document.getElementById('today').innerHTML = newDate.toDateString();
 		},
 		function(xhr) { console.error(xhr); }
