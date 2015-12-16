@@ -8,16 +8,7 @@
 
 	/* Let 'er rip. */
 	window.onload = function() {
-		displayToday();
-		
-		loadJSON(mlburl,
-			function(data) { 
-				gameData = data['data']['games']['game'];
-				extractThumbnails(createThumbnail);
-				document.getElementById('today').innerHTML = newDate.toDateString();
-			},
-			function(xhr) { console.error(xhr); }
-		);
+		createGameList();
 	};
 	</script>
 

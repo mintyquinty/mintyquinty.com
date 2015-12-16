@@ -8,7 +8,20 @@ var gameData,
 	activeGameCanvasId = 0,
 	newDate;
 
-function loadJSON(path, success, error)
+function createGameList()
+{
+	loadJSON(function(data) { 
+			gameData = data['data']['games']['game'];
+			extractThumbnails(createThumbnail);
+			
+			displayToday();
+			document.getElementById('today').innerHTML = newDate.toDateString();
+		},
+		function(xhr) { console.error(xhr); }
+	);
+}
+
+function loadJSON(success, error)
 {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function()
@@ -23,7 +36,7 @@ function loadJSON(path, success, error)
             }
         }
     };
-    xhr.open("GET", path, true);
+    xhr.open("GET", mlburl, true);
     xhr.send();
 }
 
