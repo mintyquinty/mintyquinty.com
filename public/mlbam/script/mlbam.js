@@ -40,18 +40,22 @@ function loadJSON(success, error)
 
 function extractThumbnails(callback)
 {
-    for (var i = 0; i < gameData.length; i++){
-        img = new Image();
-		images.push(img);
-        img.onload = function(){ 
-            imagesOK++; 
-            if (imagesOK >= images.length) {
-                callback();
-            }
-        };
-		img.onerror = fourohfour;
-		img.src = gameData[i]['video_thumbnail'];
-    }
+	if (gameData) {
+	    for (var i = 0; i < gameData.length; i++){
+	        img = new Image();
+			images.push(img);
+	        img.onload = function(){ 
+	            imagesOK++; 
+	            if (imagesOK >= images.length) {
+	                callback();
+	            }
+	        };
+			img.onerror = fourohfour;
+			img.src = gameData[i]['video_thumbnail'];
+	    }
+	} else {
+		document.getElementById('today').innerHTML = 'No games on ' + newDate.toDateString();
+	}
 }
 
 function createThumbnail()
