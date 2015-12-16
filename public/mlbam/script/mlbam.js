@@ -20,6 +20,7 @@ function createGameList()
 		},
 		function(xhr) { console.error(xhr); }
 	);
+    document.addEventListener('keydown', handleKey);
 }
 
 function loadJSON(success, error)
@@ -121,6 +122,31 @@ function highlightActiveGame(myCanvas){
 	context.strokeStyle = '#fff';
 	context.strokeRect(3, 20, 155, 88);
 	activeGameCanvas = myCanvas;
+}
+
+function getCanvasById(id)
+{
+	return document.getElementById(id);
+}
+
+function shiftActiveGame(shift)
+{
+	var currentId = activeGameCanvas.id;
+	var newId = parseInt(currentId) + shift;
+	if (newId < 0) newId = 0;
+	if (newId > gameData.length - 1) newId = gameData.length - 1;
+	selectedNewGame(getCanvasById(newId))
+}
+
+function handleKey(e) {
+    if (e.which == 39) {
+        console.log('39 pressed!');
+		shiftActiveGame(1);
+    }
+	if (e.which == 37) {
+		console.log('37 pressed!');
+		shiftActiveGame(-1);
+    }
 }
 
 function fourohfour(){
