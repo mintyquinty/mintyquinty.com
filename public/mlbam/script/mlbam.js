@@ -154,7 +154,8 @@ function displayToday() {
 		
 		mlburl = 'http://gdx.mlb.com/components/game/mlb/year_' + parts[2]+ '/month_' + fixedMonthString + '/day_' + fixedDateString + '/master_scoreboard.json';
 	}
-	
+	/*
+	TODO: Fix this up
 	var prev = document.getElementById('prev-day');
 	var next = document.getElementById('next-day');
 	
@@ -166,4 +167,5 @@ function displayToday() {
 	prev.addEventListener('click', function() {
 		window.location = prevLoc;
 	}, false);
+	*/
 }
