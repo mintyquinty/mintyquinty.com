@@ -16,6 +16,8 @@ class RedditContent < ActiveRecord::Base
 
   def self.get_top params
     query = { "count" => 25, "raw_json" => 1 }
+    query[:after] = params['after'] if params['after']
+    query[:before] = params['before'] if params['before']
     payload = get("https://www.reddit.com/top.json?", :query => query)
     if payload.success?
       payload
