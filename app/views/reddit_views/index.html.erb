@@ -1,0 +1,39 @@
+<% flash.each do |key, value| %>
+<div class="alert alert-<%= key %>">
+  <%= value %>
+</div>
+<% end %>
+
+<%= render 'reddit_views/header' %>
+
+<% if @top['data']['before'] %>
+|
+	<a href="/mintyreddit?before=<%= @top['data']['before'] %>">&laquo; Prev</a>
+<% end %>
+<% if @top['data']['after'] %>
+|
+	<a href="/mintyreddit?after=<%= @top['data']['after'] %>">Next &raquo;</a>
+<% end %>
+
+<table class="table table-striped table-hover">
+	<tbody>
+	<% @top['data']['children'].each_with_index do |thing, i| %>
+		<tr>
+			<td class="count"><%= i + 1 %></td>
+			<td>
+				<a href="http://www.reddit.com/<%= thing['data']['permalink'] %>" target="_new">
+					<% if !thing['data']['thumbnail'].empty? %>
+						<%= image_tag thing['data']['thumbnail'], width: 70 %>
+					<% else %>
+						<%= image_tag 'mintyreddit.png', size: '70x70' %>
+					<% end %>
+				</a>
+			</td>
+			<td class="info">
+				<a href="http://www.reddit.com/<%= thing['data']['permalink'] %>" target="_new"><%= thing['data']['title'] %></a>
+				<span>(<%= thing['data']['domain'] %>)</span>
+			</td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>

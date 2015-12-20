@@ -1,0 +1,39 @@
+// Place all the styles related to the reddit_views controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body {
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	font-size: 0.9rem;
+}
+
+table.table-striped {
+	
+	td {
+		margin: 0 10px 10px 0;
+		img {
+			border: 0;
+		}
+		a {
+			color: #00f;
+			text-decoration: none;
+		}
+		&.count {
+			color: #c6c6c6;
+			font-weight: 700;
+			text-align: center;
+			padding: 0 6px;
+		}
+		span {
+			color: #c6c6c6;
+			font-size: 0.8em;
+		}
+	}
+	tr:nth-of-type(odd) {
+		background: #f8f8f8;
+		td.info {
+			border: 1px dotted #ddd;
+			padding: 0 6px;
+		}
+	}
+}
