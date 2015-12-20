@@ -22,11 +22,7 @@
 			<td class="count"><%= i + 1 %></td>
 			<td>
 				<a href="http://www.reddit.com/<%= thing['data']['permalink'] %>" target="_new">
-					<% if !thing['data']['thumbnail'].empty? %>
-						<%= image_tag thing['data']['thumbnail'], width: 70 %>
-					<% else %>
-						<%= image_tag 'mintyreddit.png', size: '70x70' %>
-					<% end %>
+					<%= image_tag get_image_source thing['data']['thumbnail'].to_s %>
 				</a>
 			</td>
 			<td class="info">
