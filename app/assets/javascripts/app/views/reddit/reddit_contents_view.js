@@ -34,8 +34,8 @@ app.views.reddit.RedditContentsView = Backbone.View.extend({
 			  console.log('Thing could not be ' + state + 'd: ' + errorThrown);
 		  }
 	  });
-
   }
+  
 });
 
 
