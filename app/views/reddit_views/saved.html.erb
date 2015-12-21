@@ -1,0 +1,35 @@
+<% flash.each do |key, value| %>
+<div class="alert alert-<%= key %>">
+  <%= value %>
+</div>
+<% end %>
+
+<%= render 'reddit_views/header' %>
+
+<table class="table table-striped table-hover">
+	<tbody>
+	<% @saved['data']['children'].each_with_index do |thing, i| %>
+		<tr>
+			<td class="count"><%= i + 1 %></td>
+			<td>
+				<a href="http://www.reddit.com/<%= thing['data']['permalink'] %>" target="_new">
+					<%= image_tag (get_image_source thing['data']['thumbnail']), width: 70 %>
+				</a>
+			</td>
+			<td class="info">
+				<a href="http://www.reddit.com/<%= thing['data']['permalink'] %>" target="_new" class="title"><%= thing['data']['title'] %></a>
+				<span>(<%= thing['data']['domain'] %>)</span>
+			</td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+
+<div class="before-and-after">
+	<% if @saved['data']['before'] %>
+		<a href="/myreddit?before=<%= @saved['data']['before'] %>">&laquo; Prev</a>
+	<% end %>
+	<% if @saved['data']['after'] %>
+		<a href="/myreddit?after=<%= @saved['data']['after'] %>">Next &raquo;</a>
+	<% end %>
+</div>

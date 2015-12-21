@@ -1,6 +1,14 @@
-<% if current_user %>
-  Welcome <%= current_user.name %>!
-  <%= link_to "Sign Out", signout_path %>
-<% else %>
-  <%= link_to "Sign in to reddit", "/auth/reddit" %>
-<% end %>
+<header>
+	<% if current_user %>
+	  <%= link_to "Sign Out", signout_path, class: 'action-link' %>
+	  <h4><%= current_user.name.upcase %></h4>
+	  
+	  <div class="tabs">
+		<a href="/mintyreddit">top</a>
+		<a href="/myreddit">saved</a>
+	  </div>
+	  
+	<% else %>
+	  <%= link_to "Sign in to reddit", "/auth/reddit", class: 'action-link' %>
+	<% end %>
+</header>
