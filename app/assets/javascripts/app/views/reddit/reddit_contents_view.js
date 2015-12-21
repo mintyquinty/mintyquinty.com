@@ -10,16 +10,10 @@ app.views.reddit.RedditContentsView = Backbone.View.extend({
 	  this.post_url = 'https://oauth.reddit.com/api/';
   },
 
-  render: function() {
-	 /*
-	  hmmm....
-	  */
-  },
-
   saveThisThing: function(e) {
 	  e && e.preventDefault();
-	  var $e = $(e.currentTarget);
-	  var state = $e.closest('a').html();
+	  var $e = $(e.currentTarget).closest('a');
+	  var state = $e.html();
       var self = this;
 	  $.ajax({ url: self.post_url + state,
 		  type: 'POST',
@@ -31,9 +25,9 @@ app.views.reddit.RedditContentsView = Backbone.View.extend({
 		  },
 		  success: function(jsonobj) {
 			  if (state == 'save') {
-				  $e.closest('a').html('unsave');
+				  $e.html('unsave');
 			  } else {
-				  $e.closest('a').html('save');
+				  $e.html('save');
 			  }
 		  },
 		  error: function(jqXHR, textStatus, errorThrown) {

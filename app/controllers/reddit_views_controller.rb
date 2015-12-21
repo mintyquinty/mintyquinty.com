@@ -1,11 +1,7 @@
 class RedditViewsController < ApplicationController
   
   def index
-    if current_user
-      @top = RedditContent.get_user_top current_user, params
-    else
-      @top = RedditContent.get_top params
-    end
+    @top = RedditContent.get_top current_user, params
     
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +11,7 @@ class RedditViewsController < ApplicationController
   
   def saved
     if current_user
-      @saved = RedditContent.get_user_saved current_user, params
+      @saved = RedditContent.get_saved current_user, params
     
       respond_to do |format|
         format.html

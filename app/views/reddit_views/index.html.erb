@@ -44,7 +44,7 @@
 	<% provide :javascript do %>
 	  <%= javascript_tag do %>
 	    $(function() {
-	    	var view = new app.views.reddit.RedditContentsView({ el: 'body', 'token': '<%= current_user.token %>' }).render();
+	    	var view = new app.views.reddit.RedditContentsView({ el: 'body', 'token': '<%= current_user.token %>' });
 	    });
 	  <% end %>
 	<% end %>
