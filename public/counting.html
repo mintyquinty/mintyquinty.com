@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>And Counting...</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="counting/css/jquery.countdown.css">
+    <script type="text/javascript" src="counting/js/jquery.plugin.js"></script>
+    <script type="text/javascript" src="counting/js/jquery.countdown.js"></script>
+</head>
+
+<body>
+<div id="countdown" style="width: 360px; float: left;"></div>
+<br style="clear: both;"/>
+<hr />
+<div>Liftoff: <span id="target"></span></div>
+<script>
+    $("#target").html(new Date(2016, 5, 18, 12, 45));
+    $("#countdown").countdown({until: new Date(2016, 5, 18, 12, 45)});
+</script>
+</body>
+</html>

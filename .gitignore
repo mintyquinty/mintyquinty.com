@@ -3,6 +3,7 @@
 .bundle
 .config
 .powrc
+.powenv
 .idea
 schema.rb
 coverage
